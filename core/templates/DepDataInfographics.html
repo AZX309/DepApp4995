@@ -1,0 +1,261 @@
+<html>
+  <head>
+
+    <style>
+      div {display: initial;}
+
+    </style>
+
+    <!--Load the AJAX API-->
+
+
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+    <script type="text/javascript" src="https://www.gstatic.com/charts/loader.js"></script>
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the chart, passes in the data and draws the diagram
+
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+
+        data.addColumn('string', 'population');
+        data.addColumn('number', 'Percent of population experiencing symptoms');
+        data.addRows([
+          ['18 - 29 years', 52.6],
+          ['30 - 39 years', 43.1],
+          ['40 - 49 years', 36.8],
+          ['50 - 59 years', 34.8],
+          ['60 - 69 years', 27.6],
+          ['70 - 79 years', 20.3],
+          ['80+ years', 25.4]
+
+
+
+
+        ]);
+
+        // Set chart options
+        var options = {
+                       'width':1000,
+                       'height':600};
+
+
+
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+        chart.draw(data, options);
+
+
+
+
+
+      }
+
+
+
+    </script>
+
+    <script type="text/javascript">
+
+      // Load the Visualization API and the corechart package.
+      google.charts.load('current', {'packages':['corechart']});
+
+      // Set a callback to run when the Google Visualization API is loaded.
+      google.charts.setOnLoadCallback(drawChart);
+
+      // Callback that creates and populates a data table,
+      // instantiates the chart, passes in the data and draws the diagram
+
+      function drawChart() {
+
+        // Create the data table.
+        var data = new google.visualization.DataTable();
+
+        data.addColumn('string', 'population');
+        data.addColumn('number', 'Percent of population experiencing symptoms');
+        data.addRows([
+
+          ['Male', 33.1],
+          ['Female', 40.5]
+
+
+
+
+
+
+        ]);
+
+        // Set chart options
+        var options = {
+                       'width':400,
+                       'height':600};
+
+
+
+
+        // Instantiate and draw our chart, passing in some options.
+        var chart = new google.visualization.PieChart(document.getElementById('chart_div2'));
+        chart.draw(data, options);
+
+
+
+
+
+      }
+
+
+
+    </script>
+
+      <script type="text/javascript">
+      google.charts.load('current', {'packages':['geochart']});
+      google.charts.setOnLoadCallback(drawRegionsMap);
+
+      function drawRegionsMap() {
+
+        var data = google.visualization.arrayToDataTable([
+          ['State', 'Select'],
+          ['Alabama', 38.1],
+          ['Alaska', 35.6],
+          ['Arizona', 38.0],
+          ['Arkansas', 47.2],
+          ['California', 39.7],
+          ['Colorado', 42.3],
+          ['Connecticut', 33.3],
+          ['Delaware', 32.4],
+          ['District of Columbia', 38.1],
+          ['Florida', 38.7],
+          ['Georgia', 33.2],
+          ['Hawaii', 30.6],
+          ['Idaho', 34.0],
+          ['Illinois', 35.4],
+          ['Indiana',32.8],
+          ['Iowa', 33.3],
+          ['Kansas', 37.7],
+          ['Kentucky', 39.7],
+          ['Louisiana', 41.0],
+          ['Maine', 41.5],
+          ['Maryland', 36.8],
+          ['Massachusetts', 34.2],
+          ['Michigan', 36.6],
+          ['Minnesota', 32.1],
+          ['Mississippi', 37.0],
+          ['Missouri', 37.6],
+          ['Montana', 30.8],
+          ['Nebraska', 31.4],
+          ['Nevada', 33.7],
+          ['New Hampshire', 35.7],
+          ['New Jersey', 36.0],
+          ['New Mexico', 39.8],
+          ['New York', 36.6],
+          ['North Carolina', 35.8],
+          ['North Dakota', 26.8],
+          ['Ohio', 41.2],
+          ['Oklahoma', 37.5],
+          ['Oregon', 42.5],
+          ['Pennsylvania', 38.9],
+          ['Rhode Island', 39.1],
+          ['South Carolina', 30.5],
+          ['South Dakota', 25.9],
+          ['Tennessee', 34.5],
+          ['Texas', 35.7],
+          ['Utah', 32.6],
+          ['Vermont', 35.5],
+          ['Virginia', 34.3],
+          ['Washington', 37.3],
+          ['West Virginia', 43.5],
+          ['Wisconsin', 31.7],
+          ['Wyoming', 36.1]
+        ]);
+
+        var options = {'title':'Percents of population that is experiencing Anxiety OR depression',
+      region: 'US',
+      displayMode: 'regions',
+      resolution: 'provinces',
+    };
+
+        var chart = new google.visualization.GeoChart(document.getElementById('chart_div3'));
+
+        chart.draw(data, options);
+      }
+    </script>
+  </head>
+
+  <body>
+
+
+
+
+  <h1>Looking for information and statistics on anxiety and depression?</h1>
+
+  <p>Would you like information on anxiety and depression compared to: Age, Gender, or Region?  </p>
+
+
+  <!-- Form asking if they want information on age, by state or by gender-->
+
+<button id="Age" onclick="display1()">Age</button>
+<button id="Gender" onclick="display2()">Gender</button>
+<button id="State" onclick="display3()">State</button>
+
+  <h1>Percents of population that is experiencing Anxiety OR depression</h1>
+
+<div id="chart_div" style="display:none"></div>
+<div id="chart_div2" style="display:none"></div>
+<div id="chart_div3" style="display:none"></div>
+
+
+
+
+<script>
+function display1() {
+  var x = document.getElementById("chart_div");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+     chart_div2.style.display = "none";
+     chart_div3.style.display = "none";
+  } else {
+    x.style.display = "none";
+
+  }
+}
+
+function display2() {
+  var x = document.getElementById("chart_div2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+     chart_div.style.display = "none";
+     chart_div3.style.display = "none";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function display3() {
+  var x = document.getElementById("chart_div3");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+     chart_div2.style.display = "none";
+     chart_div.style.display = "none";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+
+</script>
+
+
+
+
+  </body>
+</html>
