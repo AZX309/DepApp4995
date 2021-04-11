@@ -1,0 +1,194 @@
+<html>
+      <head>
+        <!--Load the AJAX API-->
+        <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+          <script type="text/javascript">
+
+      google.load("visualization", "1", {packages:["corechart"]});
+      google.charts.load('current', {'packages':['geochart']});
+
+
+      google.setOnLoadCallback(drawchart);
+
+
+function drawchart() {
+        var opts = {sendMethod: 'auto'};
+        // Replace the data source URL on next line with your data source URL.
+        var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1oXrKGlrdyM9rbstUkvDINkhwcLQxd_EMn2cumukgh68/gviz/tq?range=A:B', opts);
+        -
+
+
+        // Send the query with a callback function.
+        query.send(handleQueryResponse);
+}
+
+
+
+function handleQueryResponse(response) {
+      if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+
+
+
+
+
+
+    var data = response.getDataTable();
+
+
+  var options = {
+    title: 'Age'
+  };
+
+
+  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  chart.draw(data, options);
+
+}
+
+
+    </script>
+
+
+          <script type="text/javascript">
+
+
+
+      google.setOnLoadCallback(drawchart);
+
+
+function drawchart() {
+        var opts = {sendMethod: 'auto'};
+        // Replace the data source URL on next line with your data source URL.
+        var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1oXrKGlrdyM9rbstUkvDINkhwcLQxd_EMn2cumukgh68/gviz/tq?range=D:E', opts);
+        -
+
+
+        // Send the query with a callback function.
+        query.send(handleQueryResponse2);
+}
+
+
+function handleQueryResponse2(response) {
+      if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+
+
+
+
+    var data2 = response.getDataTable();
+
+
+  var options2 = {
+    title: 'Gender'
+  };
+
+  var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
+  chart.draw(data2, options2);
+
+}
+
+
+    </script>
+
+          <script type="text/javascript">
+
+
+
+      google.setOnLoadCallback(drawchart);
+
+
+function drawchart() {
+        var opts = {sendMethod: 'auto'};
+        // Replace the data source URL on next line with your data source URL.
+        var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1oXrKGlrdyM9rbstUkvDINkhwcLQxd_EMn2cumukgh68/gviz/tq?range=G:H', opts);
+        -
+
+
+        // Send the query with a callback function.
+        query.send(handleQueryResponse3);
+}
+
+
+function handleQueryResponse3(response) {
+      if (response.isError()) {
+        alert('Error in query: ' + response.getMessage() + ' ' + response.getDetailedMessage());
+        return;
+      }
+
+
+
+
+    var data3 = response.getDataTable();
+
+
+    var options3 = {'title':'Percents of population that is experiencing Anxiety OR depression',
+      region: 'US',
+      displayMode: 'regions',
+      resolution: 'provinces',
+    };
+
+   var chart = new google.visualization.GeoChart(document.getElementById('chart_div3'));
+  chart.draw(data3, options3);
+
+}
+
+
+    </script>
+      </head>
+
+      <body>
+        <!--Divs that will hold the charts-->
+       <button id="Age" onclick="display1()">Age</button>
+    <button id="Gender" onclick="display2()">Gender</button>
+        <button id="State" onclick="display3()">State</button>
+   <div id="chart_div" style="display:none"></div>
+     <div id="chart_div2" style="display:none"></div>
+        <div id="div3title" style="display:none">Percents of population that is experiencing Anxiety OR depression</div>
+        <div id="chart_div3" style="display:none"></div>
+
+  <script>
+  function display1() {
+  var x = document.getElementById("chart_div");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+     chart_div2.style.display = "none";
+     chart_div3.style.display = "none";
+     div3title.style.display = "none";
+  } else {
+    x.style.display = "none";
+
+  }
+}
+
+function display2() {
+  var x = document.getElementById("chart_div2");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+     chart_div.style.display = "none";
+     chart_div3.style.display = "none";
+     div3title.style.display = "none";
+  } else {
+    x.style.display = "none";
+  }
+}
+
+function display3() {
+  var x = document.getElementById("chart_div3");
+  if (x.style.display === "none") {
+    x.style.display = "block";
+    div3title.style.display = "block"
+     chart_div2.style.display = "none";
+     chart_div.style.display = "none";
+  } else {
+    x.style.display = "none";
+    div3title.style.display = "none";
+  }
+}
+</script>
+      </body>
+    </html>
