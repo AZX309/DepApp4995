@@ -58,3 +58,19 @@ def register_user(request):
         form = SignUpForm()
 
     return render(request, "accounts/register.html", {"form": form, "msg" : msg, "success" : success })
+
+# empty url - redirect user to login/welcome page
+def redirect_to_login(request):
+    return redirect('/welcome/')
+
+def welcome_view(request):
+    #current_user = User.objects.get(pk=request.user.id)
+    return render(request, 'welcome.html')
+
+def intro_view(request):
+    #current_user = User.objects.get(pk=request.user.id)
+    return render(request, 'intro.html')
+
+def people_view(request):
+    #current_user = User.objects.get(pk=request.user.id)
+    return render(request, 'people.html')
