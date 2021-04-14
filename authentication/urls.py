@@ -14,7 +14,7 @@ urlpatterns = [
 
     #added paths
     path('welcome/', welcome_view, name='welcome'),
-    path("proj_inro/", intro_view, name="intro"),
+    path("proj_intro/", intro_view, name="intro"),
     path("people/", people_view, name="people"),
     #path("analytics/", analytics_view, name="google-visulizer"),
 
