@@ -17,6 +17,14 @@ def index(request):
     html_template = loader.get_template('intro.html')
     return HttpResponse(html_template.render(context, request))
 
+# @login_required(login_url="/login/")
+# def ai(request):
+#     context = {}
+#     context['segment'] = 'intro'
+#
+#     html_template = loader.get_template('intro.html')
+#     return HttpResponse(html_template.render(context, request))
+
 @login_required(login_url="/login/")
 def pages(request):
     context = {}

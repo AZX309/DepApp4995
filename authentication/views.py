@@ -61,7 +61,7 @@ def register_user(request):
 
 # empty url - redirect user to login/welcome page
 def redirect_to_login(request):
-    return redirect('/welcome/')
+    return redirect('/intro/')
 
 def welcome_view(request):
     #current_user = User.objects.get(pk=request.user.id)
@@ -74,3 +74,6 @@ def intro_view(request):
 def people_view(request):
     #current_user = User.objects.get(pk=request.user.id)
     return render(request, 'people.html')
+def stats_view(request):
+    #current_user = User.objects.get(pk=request.user.id)
+    return render(request, 'DepDataInfographics.html')

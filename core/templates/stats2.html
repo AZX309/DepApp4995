@@ -1,17 +1,37 @@
+{% extends "layouts/base.html" %}
 
+{% block title %} Page Blank {% endblock %} 
 
-<html>
+<!-- Specific CSS goes HERE -->
+{% block stylesheets %}{% endblock stylesheets %}
 
+{% block content %}
 
-  <head>
-<!--{% extends "layouts/base.html" %}-->
+    <div class="pcoded-content">
+        <div class="pcoded-inner-content">
+            <!-- [ breadcrumb ] start -->
+            <div class="page-header">
+                <div class="page-block">
+                    <div class="row align-items-center">
+                        <div class="col-md-12">
+                            <div class="page-header-title">
+                                <h5 class="m-b-10">Sample Page</h5>
+                            </div>
+                            <ul class="breadcrumb">
+                                <li class="breadcrumb-item"><a href="/"><i class="feather icon-home"></i></a></li>
+                                <li class="breadcrumb-item"><a href="javascript:">Sample Page</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- [ breadcrumb ] end -->
+            <div class="main-body">
+                <div class="page-wrapper">
+                    <!-- [ Main Content ] start -->
+                    <div class="row">
+                        <div class="col-sm-12">
 
-<!--{% block title %} Page Blank {% endblock %}-->
-
-<!--&lt;!&ndash; Specific CSS goes HERE &ndash;&gt;-->
-<!--{% block stylesheets %}{% endblock stylesheets %}-->
-
-<!--{% block content %}-->
     <style>
       div {display: initial;}
 
@@ -268,10 +288,16 @@ function display3() {
 
 
 
-  </body>
 
-<!--{% endblock content %}-->
+                        </div>
+                    </div>
+                    <!-- [ Main Content ] end -->
+                </div>
+            </div>
+        </div>
+    </div>
 
-<!--&lt;!&ndash; Specific Page JS goes HERE  &ndash;&gt;-->
-<!--{% block javascripts %}{% endblock javascripts %}-->
-</html>
+{% endblock content %}
+
+<!-- Specific Page JS goes HERE  -->
+{% block javascripts %}{% endblock javascripts %}
