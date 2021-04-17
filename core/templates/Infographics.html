@@ -4,7 +4,7 @@
         <script type="text/javascript" src="https://www.google.com/jsapi"></script>
           <script type="text/javascript">
 
-      google.load("visualization", "1", {packages:["corechart"]});
+      google.load("visualization", "48", {packages:["corechart"]});
       google.charts.load('current', {'packages':['geochart']});
 
 
@@ -39,11 +39,14 @@ function handleQueryResponse(response) {
 
 
   var options = {
-    title: 'Age'
+    title: 'Age',
+    'width':400,
+    'height':300,
+     hAxis: { textPosition: 'none' }
   };
 
 
-  var chart = new google.visualization.PieChart(document.getElementById('chart_div'));
+  var chart = new google.visualization.BarChart(document.getElementById('chart_div'));
   chart.draw(data, options);
 
 }
@@ -83,8 +86,10 @@ function handleQueryResponse2(response) {
     var data2 = response.getDataTable();
 
 
-  var options2 = {
-    title: 'Gender'
+    var options2 = {
+    title: 'Gender',
+    'width':400,
+    'height':300
   };
 
   var chart = new google.visualization.BarChart(document.getElementById('chart_div2'));
@@ -130,6 +135,8 @@ function handleQueryResponse3(response) {
       region: 'US',
       displayMode: 'regions',
       resolution: 'provinces',
+      'width':400,
+    'height':300
     };
 
    var chart = new google.visualization.GeoChart(document.getElementById('chart_div3'));
@@ -139,6 +146,11 @@ function handleQueryResponse3(response) {
 
 
     </script>
+
+          <script>
+
+
+</script>
       </head>
 
       <body>
@@ -146,10 +158,15 @@ function handleQueryResponse3(response) {
        <button id="Age" onclick="display1()">Age</button>
     <button id="Gender" onclick="display2()">Gender</button>
         <button id="State" onclick="display3()">State</button>
-   <div id="chart_div" style="display:none"></div>
-     <div id="chart_div2" style="display:none"></div>
+   <div id="chart_div" style="display:block"></div>
+     <div id="chart_div2" style="display:block"></div>
         <div id="div3title" style="display:none">Percents of population that is experiencing Anxiety OR depression</div>
-        <div id="chart_div3" style="display:none"></div>
+        <div id="chart_div3" style="display:block"></div>
+
+
+
+
+
 
   <script>
   function display1() {
