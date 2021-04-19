@@ -162,15 +162,35 @@ function handleQueryResponse3(response) {
       </head>
 
       <body>
-        <!--Divs that will hold the charts-->
-       <button id="Age" onclick="display1()">Age</button>
-    <button id="Gender" onclick="display2()">Gender</button>
-        <button id="State" onclick="display3()">State</button>
-   <div id="chart_div" style="display:block"></div>
-     <div id="chart_div2" style="display:block"></div>
-        <div id="div3title" style="display:none">Percents of population that is experiencing Anxiety OR depression</div>
-        <div id="chart_div3" style="display:block"></div>
 
+
+      <div class="page-wrapper">
+          <!-- [ Main Content ] start -->
+          <div class="row">
+              <div class="col-sm-12">
+                  <div class="card">
+                      <div class="card-header">
+                          <h5>Stats!</h5>
+                      </div>
+                      <div class="card-block">
+                          <!--Divs that will hold the charts-->
+                          <button id="Age" onclick="display1()">Age</button>
+                          <button id="Gender" onclick="display2()">Gender</button>
+                          <button id="State" onclick="display3()">State</button>
+                          <div id="chart_div" style="display:block"></div>
+                          <div id="chart_div2" style="display:block"></div>
+                          <div id="div3title" style="display:none">Percents of population that is experiencing Anxiety
+                              OR depression
+                          </div>
+                          <div id="chart_div3" style="display:block"></div>
+                      </div>
+                  </div>
+              </div>
+          </div>
+          <!-- [ Main Content ] end -->
+      </div>
+
+      </body>
 
 
 
@@ -215,7 +235,6 @@ function display3() {
   }
 }
 </script>
-      </body>
     </html>
 
 {% endblock content %}
