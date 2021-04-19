@@ -63,7 +63,7 @@ body {
   font-size: 14px;
   color: #888;
   font-weight: 400;
-  background: #f4f7fa;
+  background: #d2d2d2;
   position: relative;
 }
 
@@ -82,7 +82,7 @@ h3,
 h4,
 h5,
 h6 {
-  color: #111;
+
   font-weight: 400;
 }
 
@@ -91,6 +91,7 @@ h1 {
 }
 
 h2 {
+  color: rgb(233, 203, 130);
   font-size: 44px;
 }
 
@@ -4634,7 +4635,7 @@ p.text-muted {
   color: #23b7e5;
 }
 .pcoded-navbar.navbar-dark {
-  background: #b59a57;
+  background: #343434;
 }
 .pcoded-navbar.navbar-dark .mobile-menu span {
   background-color: #fff;
