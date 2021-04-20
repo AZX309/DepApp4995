@@ -77,3 +77,4 @@ def people_view(request):
 def stats_view(request):
     #current_user = User.objects.get(pk=request.user.id)
     return render(request, 'Infographics.html')
+
