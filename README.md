@@ -116,6 +116,25 @@ Visit `http://localhost:8001` in your browser. The app should be up & running.
 
 <br />
 
+### [Google Charts](https://developers.google.com/chart/interactive/docs)
+---
+
+> This site is using the Google Charts Visualizer to display data on depression and anxiety. Currently, it is reading from a Google Spreadsheets file hosted online via Google Drive.
+Once the spreadsheet file is hosted on Google Drive, you then need to make sure it is set to anyone can view in the sharing section at the top-right of the Google Drive page. 
+After the file is hosted on google drive, and available to be read from, we can then replace the current URL with your new URL. Currently it is being called as 
+
+ ```
+var query = new google.visualization.Query('https://docs.google.com/spreadsheets/d/1oXrKGlrdyM9rbstUkvDINkhwcLQxd_EMn2cumukgh68/gviz/tq?range=A:B', opts);
+```
+> Replace this URL with your like so: 
+
+ ```
+var query = new google.visualization.Query('YOUR_NEW_url', opts);
+```
+> To specify with cells you would like to read from simply use the range=A:B command after the URL to specify that you would only want to read from columns A and B. For more information on specifying cells feel free to read Google Charts Guide here: https://developers.google.com/chart/interactive/docs/spreadsheets#query-source-ranges 
+
+
+
 
 ## Credits & Links
 
